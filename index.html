@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Nội dung mỗi ngày</title>
+</head>
+<body style="text-align:center; font-family:sans-serif;">
+  <h1>📅 Nội dung hôm nay</h1>
+
+  <!-- Tự động lấy nội dung hôm nay theo ngày hệ thống -->
+  <script>
+    const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+    const img = `<img src="media/${today}.jpg" width="80%">`;
+    const vid = `<video width="80%" controls autoplay><source src="media/${today}.mp4" type="video/mp4"></video>`;
+
+    document.write(`
+      <div id="today-content">
+        ${img}
+        <p>Nếu không có ảnh, có thể là video:</p>
+        ${vid}
+      </div>
+    `);
+  </script>
+
+  <hr>
+  <h2>📜 Danh sách ngày trước</h2>
+  <ul style="list-style: none; padding: 0;">
+    <li><a href="media/2025-07-13.jpg" target="_blank">2025-07-13 (Ảnh)</a></li>
+    <li><a href="media/2025-07-12.mp4" target="_blank">2025-07-12 (Video)</a></li>
+    <!-- Thêm thủ công hoặc tự động -->
+  </ul>
+</body>
+</html>
